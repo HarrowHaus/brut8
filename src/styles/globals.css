@@ -1,1 +1,36 @@
-See local file content
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Additional demo-specific overrides for Brut8 showcase */
+body {
+  font-family: var(--font-sans);
+}
+
+.brut8-demo {
+  min-height: 100vh;
+  background-color: var(--brut-bg);
+  color: var(--brut-text);
+}
+
+/* Make sure pixel fonts render crisply in demo */
+.font-pixel {
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Demo header styling */
+.brut-header {
+  border-bottom: 3px solid var(--brut-border);
+  background-color: var(--brut-panel);
+}
+
+/* Status bar at bottom like old tool */
+.brut-status {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  border-top: 2px solid var(--brut-border);
+  background-color: var(--brut-panel-alt);
+}
