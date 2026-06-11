@@ -1,1 +1,194 @@
-See local file content
+/* Brut8 Base Styles - Import after Tailwind */
+
+@import './tokens.css';
+
+/* Base body / app container for Brut8 projects */
+.brut8-root {
+  background-color: var(--brut-bg);
+  color: var(--brut-text);
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum";
+}
+
+/* Raw panel / card base */
+.brut-panel {
+  background-color: var(--brut-panel);
+  border: var(--border-width-thick) solid var(--brut-border);
+  box-shadow: var(--shadow-inset-strong);
+  position: relative;
+}
+
+/* High-contrast raw white panel variant */
+.brut-panel-light {
+  background-color: var(--brut-panel-light);
+  color: var(--brut-text-inverse);
+  border-color: var(--brut-border-strong);
+}
+
+/* Subtle inner grid or construction lines */
+.brut-panel::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(255,255,255,0.03);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Typography defaults for raw aesthetic */
+h1, h2, h3, h4, .brut-heading {
+  font-family: var(--font-pixel);
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+label, .brut-label {
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: var(--brut-text-muted);
+  text-transform: uppercase;
+}
+
+/* Data / metric text */
+.brut-data {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum";
+  letter-spacing: 0.5px;
+}
+
+/* Button base reset + raw style */
+.brut-button {
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: var(--border-width-thick) solid var(--brut-border);
+  background-color: var(--brut-panel-alt);
+  color: var(--brut-text);
+  box-shadow: var(--shadow-inset);
+  transition: all var(--transition-fast);
+  position: relative;
+  user-select: none;
+}
+
+.brut-button:hover:not(:disabled) {
+  background-color: var(--brut-panel);
+  border-color: var(--brut-accent);
+}
+
+.brut-button:active:not(:disabled),
+.brut-button.pressed {
+  box-shadow: var(--shadow-pressed);
+  transform: translateY(1px);
+}
+
+.brut-button:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus), var(--shadow-inset-strong);
+  border-color: var(--brut-accent);
+}
+
+.brut-button--accent {
+  background-color: var(--brut-accent);
+  color: white;
+  border-color: var(--brut-accent-dark);
+}
+
+.brut-button--accent:hover:not(:disabled) {
+  background-color: var(--brut-accent-dark);
+}
+
+.brut-button--destructive {
+  background-color: var(--brut-destructive);
+  color: white;
+  border-color: #b91c1c;
+}
+
+/* Input / form elements raw style */
+.brut-input {
+  font-family: var(--font-mono);
+  background-color: var(--brut-bg);
+  border: var(--border-width-thick) solid var(--brut-border);
+  color: var(--brut-text);
+  box-shadow: var(--shadow-inset);
+  transition: border-color var(--transition-fast);
+}
+
+.brut-input:focus {
+  border-color: var(--brut-accent);
+  box-shadow: var(--shadow-focus), var(--shadow-inset);
+  outline: none;
+}
+
+.brut-input::placeholder {
+  color: var(--brut-text-muted);
+  opacity: 0.7;
+}
+
+/* Progress bar raw */
+.brut-progress {
+  background-color: var(--brut-panel-alt);
+  border: var(--border-width) solid var(--brut-border);
+  overflow: hidden;
+}
+
+.brut-progress > div {
+  background-color: var(--brut-accent);
+  transition: width var(--transition-base);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2);
+}
+
+/* Badge / tag */
+.brut-badge {
+  font-family: var(--font-pixel);
+  font-size: 0.625rem;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  border: 1px solid var(--brut-border);
+  background-color: var(--brut-panel-alt);
+  color: var(--brut-text-muted);
+  text-transform: uppercase;
+}
+
+/* Separator */
+.brut-separator {
+  border-color: var(--brut-border);
+}
+
+/* Focus visible for all interactive raw elements */
+.brut8-root :focus-visible {
+  outline: 2px solid var(--brut-accent);
+  outline-offset: 2px;
+}
+
+/* Optional decorative: Rivets */
+.brut-rivet {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--brut-border-strong);
+  border: 1px solid var(--brut-panel);
+  border-radius: 50%;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+/* Tape decoration */
+.brut-tape {
+  position: absolute;
+  background-color: #f4a261;
+  height: 18px;
+  width: 60px;
+  opacity: 0.85;
+  transform: rotate(-8deg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  z-index: 10;
+  pointer-events: none;
+}
+.brut-tape::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 1px dashed rgba(0,0,0,0.2);
+}
