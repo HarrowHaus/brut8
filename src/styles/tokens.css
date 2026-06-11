@@ -1,1 +1,94 @@
-See local file content
+/* Brut8 Design Tokens — Brutalist Pixel Aesthetic */
+
+:root {
+  /* === Colors - Raw Brutalist Pixel === */
+  --brut-bg: #0d0d0d;
+  --brut-bg-alt: #111111;
+  --brut-panel: #1f1f1f;
+  --brut-panel-alt: #2a2a2a;
+  --brut-panel-light: #f5f5f5;
+  --brut-text: #f0f0f0;
+  --brut-text-muted: #a0a0a0;
+  --brut-text-inverse: #111111;
+  --brut-accent: #ff5500;
+  --brut-accent-dark: #cc4400;
+  --brut-accent-light: #ff7a33;
+  --brut-success: #22c55e;
+  --brut-warning: #eab308;
+  --brut-destructive: #ef4444;
+  --brut-border: #444444;
+  --brut-border-strong: #666666;
+  --brut-grid: rgba(255, 255, 255, 0.06);
+
+  /* === Typography === */
+  --font-pixel: 'Press Start 2P', 'Silkscreen', ui-monospace, monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* === Spacing (Pixel Grid Rhythm - 4px base) === */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* === Borders & Radii === */
+  --border-width: 2px;
+  --border-width-thick: 3px;
+  --border-width-heavy: 4px;
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* === Shadows - Inset heavy for carved/pressed === */
+  --shadow-inset: inset 0 2px 0 rgba(255,255,255,0.1), inset 0 -2px 0 rgba(0,0,0,0.4);
+  --shadow-inset-strong: inset 0 3px 0 rgba(255,255,255,0.08), inset 0 -3px 0 rgba(0,0,0,0.5), inset 2px 0 0 rgba(255,255,255,0.05), inset -2px 0 0 rgba(0,0,0,0.3);
+  --shadow-pressed: inset 0 4px 6px rgba(0,0,0,0.6);
+  --shadow-focus: 0 0 0 3px var(--brut-accent);
+
+  /* === Transitions === */
+  --transition-fast: 80ms cubic-bezier(0.23, 1, 0.32, 1);
+  --transition-base: 150ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.brut-light {
+  --brut-bg: #f5f5f5;
+  --brut-panel: #ffffff;
+  --brut-panel-alt: #f0f0f0;
+  --brut-text: #111111;
+  --brut-text-muted: #555555;
+  --brut-border: #cccccc;
+  --brut-grid: rgba(0, 0, 0, 0.06);
+}
+
+.brut-grid-bg {
+  background-image: 
+    linear-gradient(var(--brut-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--brut-grid) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.font-pixel {
+  font-family: var(--font-pixel);
+  letter-spacing: 1px;
+  image-rendering: pixelated;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.focus-brut:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus), var(--shadow-inset-strong);
+  border-color: var(--brut-accent);
+}
+
+.pressed {
+  box-shadow: var(--shadow-pressed);
+  transform: translateY(1px);
+}
