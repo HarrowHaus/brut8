@@ -312,7 +312,7 @@ function App() {
               ))}
             </div>
           </TabsContent>
-        </TabsContent>
+        </Tabs>
       </TabsContent>
 
       {/* Footer */}
